@@ -1,0 +1,42 @@
+services:
+  app:
+    image: php:apache
+    container_name: php_apache
+    volumes:
+      - ./app:/var/www/html
+      - ./php_apache.entrypoint.sh:/opt/php_apache.entrypoint.sh
+    entrypoint: /opt/php_apache.entrypoint.sh
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_DATABASE=zucchetti
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_HOST=db
+
+  db:
+    image: mysql:5.7
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: zucchetti
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - /var/lib/mysql
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - db
