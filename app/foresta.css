@@ -1,0 +1,21 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+}
+
+#mappa {
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.animale {
+    position: absolute;
+    font-size: 32px;
+    width: auto;
+    cursor: move;
+    background-color: white;
+    border-radius: 30px;
+    padding: 3px 5px 0px 5px;
+}

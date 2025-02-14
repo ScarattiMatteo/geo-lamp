@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="jquery-ui-1.14.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="foresta.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery-ui-1.14.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <img id="mappa" src="foresta.png" />
+    <script>
+        $(function () {
+            $.get("animali.get.php", function (data) {
+                console.log("animali.get.php: ", data);
+                var animali = data.animali;
+                animali.forEach(function (animale) {
+                    // Creazione del div
+                    var contenitore_animale = $('<div></div>');
+                    // Aggiunta della classe CSS
+                    contenitore_animale.addClass('animale');
+                    contenitore_animale.attr('id_animale', animale.id_animale);
+                    // Aggiunta di contenuto opzionale
+                    contenitore_animale.text(animale.emoji);
+                    contenitore_animale.css('top', animale.offset_top);
+                    contenitore_animale.css('left', animale.offset_left);
+
+                    // Append al body
+                    $('body').append(contenitore_animale);
+
+                    contenitore_animale.draggable({
+                        stop: function () {
+                            var id_animale = $(this).attr('id_animale');
+                            console.log("draggable end: " + id_animale);
+                            var offset_top = $(this).position().top;
+                            var offset_left = $(this).position().left;
+
+                            var post_data = {
+                                id_animale: id_animale,
+                                offset_top: offset_top,
+                                offset_left: offset_left
+                            };
+
+                            $.post("animali.post.php", post_data, function (data) {
+                                console.log("animali.post.php SUCCESS")
+                            })
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
