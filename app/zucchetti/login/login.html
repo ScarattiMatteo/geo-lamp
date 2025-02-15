@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../shared/shared.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"/>
+
+    <title>Z-Volta - Login</title>
+</head>
+<body>
+    <!--* Logo *-->
+    <div class="logo-container">
+        <div class="logo-text">Z-VOlTA</div>    <!-- The weird spelling is because of the font -->
+    </div>
+
+    <!--* Vertical separator *-->
+    <div id="separator"></div>
+
+    <!--* Login box *-->
+    <div id="login-steps-container">
+        <form id="login-form" action="login.php" method="post">
+            <!-- Role selection step -->
+            <div class="login-step" id="role-step">
+                <h2>Select your role</h2>
+                <div id="role-tabs">
+                    <label class="role-tab default-interaction-behavior" id="employee">
+                        <input type="radio" name="role" value="employee" onclick="selectRole('employee')">
+                        <p class="role-title">Employee</p>
+                        <p class="role-description">Access to basic features.</p>
+                    </label>
+                    <label class="role-tab default-interaction-behavior" id="manager">
+                        <input type="radio" name="role" value="manager" onclick="selectRole('manager')">
+                        <p class="role-title">Manager</p>
+                        <p class="role-description">Access to management features.</p>
+                    </label>
+                    <label class="role-tab default-interaction-behavior" id="admin">
+                        <input type="radio" name="role" value="admin" onclick="selectRole('admin')">
+                        <p class="role-title">Admin</p>
+                        <p class="role-description">Full access to all features.</p>
+                    </label>
+                </div>
+    
+                <div class="navigation-buttons">
+                    <button type="button" class="next-button default-interaction-behavior" onclick="goToStep('credentials')" disabled>Next</button>
+                </div>
+            </div>
+    
+            <!-- Credentials step -->
+            <div class="login-step" id="credentials-step">
+                <h2>Enter your credentials</h2>
+                <input type="text" name="first-name" placeholder="First Name" id="first-name" required>
+                <input type="text" name="last-name" placeholder="Last Name" id="last-name" required>
+                <div id="password-container">
+                    <input type="password" name="password" placeholder="Password" id="password" required>
+                    <span onclick="togglePassword()" class="material-symbols-rounded">visibility</span>
+                </div>
+
+                <div id="password-requirements">
+                    Password must be:
+                    <ul>
+                        <li id="length" class="requirement">Eight characters long;</li>
+                        <li id="uppercase" class="requirement">One uppercase letter;</li>
+                        <li id="number" class="requirement">One number;</li>
+                        <li id="special" class="requirement">One special character<br>(! @ # $ % ^ & * _ - + = | : ; , . ? ~ `).</li>
+                    </ul>
+                </div>
+    
+                <div class="navigation-buttons">
+                    <button type="button" class="default-interaction-behavior" onclick="goToStep('role')">Previous</button>
+                    <button type="button" class="default-interaction-behavior" onclick="verifyCAPTCHA()" disabled>Verify</button>
+                </div>
+            </div>
+    
+            <!-- CAPTCHA step -->
+            <div class="login-step" id="captcha-step">
+                <h2>Complete the CAPTCHA</h2>
+                <canvas id="captcha-canvas" width="360px" height="180px"></canvas>
+
+                <div id="progress-bar-wrapper">
+                    <div id="progress-bar"></div>
+                </div>
+
+                <div id="captcha-container">
+                    <input type="text" name="captcha" placeholder="Enter CAPTCHA text" id="captcha" maxlength="5">
+                    <span onclick="textCAPTCHA.refresh()" class="material-symbols-rounded">sync</span>
+                </div>
+    
+                <div class="navigation-buttons">
+                    <button type="button" class="default-interaction-behavior" onclick="goToStep('credentials')">Previous</button>
+                    <button type="button" onclick="textCAPTCHA.validate()" class="submit-button default-interaction-behavior" disabled>Check</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--* Notification chips container *-->
+    <div id="chips-container">
+        <!-- The chips wil be created here -->
+    </div>
+
+    
+    <!--! SCRIPT !-->
+    <script src="../shared/shared.js"></script>
+    <script src="scripts/captcha.js"></script>
+    <script src="scripts/login.js"></script>
+</body>
+</html>

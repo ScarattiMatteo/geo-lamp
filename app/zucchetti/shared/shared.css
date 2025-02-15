@@ -1,0 +1,151 @@
+/*
+ ! File shared across all pages.
+ ! If anything needs to be re-used in more pages, here's where to put it.
+*/
+
+/*! Import fonts from Google API !*/
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Syncopate:wght@400;700&display=swap');
+
+
+/*! Styling for all elements !*/
+* {
+    margin: 0;                          /* Default to no margin */
+    padding: 0;                         /* Default to no padding */
+    box-sizing: border-box;             /* Includes border or padding in width and height calculations */
+    font-family: "Nunito", system-ui;   /* Default font-family ("Nunito") with fallback to the user's system UI */
+}
+
+
+/*! Global variables !*/
+:root {
+    --default-transition-time: 0.3s;    /* The default transition time */
+    --default-border-radius: 15px;      /* The default border radius */
+}
+
+
+/*! Color palette !*/
+:root {
+    /* The color palette of a shade of blue (ranging from the darkest to lightest shades) */
+    --darkest: #2a2e3a;
+    --dark: #153969;
+    --regular: #8f9ed1;
+    --light: #b0c6df;
+    --lightest: #f4f4f4;
+
+    /* 50% transparency based on the palette's shade of blue */
+    --dark-transparency: #2a2e3abf;
+    --light-transparency: #e7eaf1bf;
+}
+
+/* Selection (when selecting text) */
+::selection {
+    background-color: var(--regular);
+    color: #ffffff;
+}
+
+
+/*! Default behavior on hovering and holding !*/
+/* Default behavior on element hover */
+.default-interaction-behavior:hover {
+    transform: translateY(-2px);    /* Move the element slightly upwards */
+    filter: brightness(102%);       /* Slightly brighten */
+}
+
+/* Default behavior on element click down */
+.default-interaction-behavior:active {
+    transform: translateY(2px); /* Move the element slightly downwards */
+    filter: brightness(98%);    /* Slightly reduce the brightness */
+    scale: 1.05;                /* Make the element a little bigger */
+}
+
+
+/*! Default base elements !*/
+/* Default styling for buttons */
+button {
+    width: fit-content;                             /* Width to fit the content of the button */
+    border: 2px solid var(--dark-transparency);     /* A darker border (transparency) */
+    border-radius: var(--default-border-radius);    /* Smooth corners */
+    padding: 10px;                                  /* Distance from the border */
+    color: var(--darkest);                          /* Text color */
+    background-color: var(--regular);               /* Background color */
+    font-size: 18px;                                /* Font size (slightly bigger) */
+    font-weight: bold;                              /* Bold font */
+    transition: var(--default-transition-time);     /* Default transition time */
+    cursor: pointer;                                /* Change the cursor to a "selecting" cursor */
+}
+    /* When the button is disabled */
+    button:disabled {
+        filter: saturate(10%);  /* Set the saturation to grayish */
+        cursor: not-allowed;    /* Set the cursor to a "not allowed" cursor ("🛇") */
+    }
+        /* Fix the behavior on hover of the disabled button */
+        button:disabled.default-interaction-behavior:hover {
+            /* Override the default behavior */
+            transform: none;        /* No longer transform */
+
+            /* Actual specific styling */
+            filter: saturate(10%);  /* Set the saturation to grayish */
+        }
+        
+        /* Fix the behavior on hold of the disabled button */
+        button:disabled.default-interaction-behavior:active {
+            /* Override the default behavior */
+            transform: none;        /* No longer transform */
+            scale: none;            /* No longer scale */
+
+            /* Actual specific styling */
+            filter: saturate(10%);  /* Set the saturation to grayish */
+        }
+
+/* Default styling for input text and password */
+input[type="text"], input[name="password"] {
+    padding: 5px 12px;                              /* Set the padding with more space from the left and right side */
+    border: 2px solid var(--dark-transparency);     /* Darker border */
+    border-radius: 999px;                           /* Smooth corners */
+    font-weight: bold;                              /* Bold font */
+    font-size: 16px;                                /* Larger font */
+    color: var(--darkest);                          /* Text color */
+}
+    /* Color of the outline while the input is focused */
+    input[type="text"]:focus-visible, input[name="password"]:focus-visible {
+        outline-color: var(--dark); /* Color of the outline */
+    }
+
+    /* Styling for the placeholder text */
+    input[type="text"]::placeholder, input[name="password"]::placeholder {
+        color: var(--regular);  /* Text color */
+        filter: saturate(30%);  /* With slight de-coloration */
+    }
+
+
+/* Default styling for input password (if invalid) */
+input[name="password"].invalid-password {
+    border-color: #b04545bf;    /* Color of the border */
+    color: #612a2a;             /* Text color */
+}
+    /* Color of the outline while the input is focused */
+    input[name="password"].invalid-password:focus-visible {
+        outline-color: #af4646; /* Color of the outline */
+    }
+
+    /* Styling for the placeholder text */
+    input[name="password"].invalid-password::placeholder {
+        color: #e26565;       /* Text color */
+        filter: saturate(30%);  /* With slight de-coloration */
+    }
+
+/* Default styling for input password (if valid) */
+input[name="password"].valid-password {
+    border-color:#4eb045bf; /* Color of the border */
+    color: #33612a;         /* Text color */
+}
+    /* Color of the outline while the input is focused */
+    input[name="password"].valid-password:focus-visible {
+        outline-color: #64af46; /* Color of the outline */
+    }
+
+    /* Styling for the placeholder text */
+    input[name="password"].valid-password::placeholder {
+        color: #7ee265;       /* Text color */
+        filter: saturate(30%);  /* With slight de-coloration */
+    }

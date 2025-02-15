@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra di Forza Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #text {
+            padding: 10px;
+            width: 250px;
+            margin-bottom: 10px;
+        }
+
+        #strength-bar {
+            width: 250px;
+            height: 20px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+
+        #strength-bar-inner {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .strength-text {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <input type="text" id="text" placeholder="Inserisci la tua password" oninput="checkPasswordStrength()">
+        <div id="strength-bar">
+            <div id="strength-bar-inner"></div>
+        </div>
+        <p id="strength-text" class="strength-text">Password debole</p>
+    </div>
+
+    <script>
+        function checkPasswordStrength() {
+            const text = document.getElementById("text").value;
+            const strengthBar = document.getElementById("strength-bar-inner");
+            const strengthText = document.getElementById("strength-text");
+
+            let strength = 0;
+
+            // Condizioni per determinare la forza della password
+            if (text.length >= 8) strength += 1; // lunghezza minima
+            if (/[A-Z]/.test(text)) strength += 1; // lettere maiuscole
+            if (/[a-z]/.test(text)) strength += 1; // lettere minuscole
+            if (/\d/.test(text)) strength += 1; // numeri
+            if (/[^A-Za-z0-9]/.test(text)) strength += 1; // caratteri speciali
+
+            // Impostazione della larghezza della barra
+            let percentage = 0;
+            let color = "#ff4d4d"; // Rosso per password debole
+
+            if (strength === 1) {
+                percentage = 20;
+                color = "##ff4d4d"; // rosso per password media
+                strengthText.innerText = "Password debole";
+            } else if (strength === 2) {
+                percentage = 40;
+                color = "#ffcc00"; // Giallo per password media
+                strengthText.innerText = "Password media";
+            } else if (strength === 3) {
+                percentage = 60;
+                color = "#99cc00"; // Verde per password forte
+                strengthText.innerText = "Password forte";
+            } else if (strength === 4) {
+                percentage = 80;
+                color = "#99cc00"; // Verde per password molto forte
+                strengthText.innerText = "Password molto forte";
+            } else if (strength === 5) {
+                percentage = 100;
+                color = "#00cc00"; // Verde scuro per password molto forte
+                strengthText.innerText = "Password molto forte";
+            }
+
+            strengthBar.style.width = percentage + "%";
+            strengthBar.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

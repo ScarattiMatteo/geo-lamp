@@ -1,0 +1,377 @@
+/* Page's <body> selector */
+body {
+    height: 100vh;                  /* Full vertical height based on vh ("view height") */
+    width: 100vw;                   /* Full horizontal width based on the vw ("view width") */
+    background-image:               /* SVG pattern for the background */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(90,960,455)'%3E%3Cstop offset='0' stop-color='%238F9ED1'/%3E%3Cstop offset='1' stop-color='%23153969'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.05'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;   /* The SVG image is fixed to the viewport and will not scroll or move */
+    background-size: cover;         /* Cover the whole viewport space */
+    display: flex;                  /* Items alignment */
+    align-items: center;            /* Vertical alignment */
+    justify-content: space-evenly;  /* Align items to be evenly spaced horizontally */
+}
+
+
+/*! Logo !*/
+/* <div> container for the logo */
+.logo-container {
+    /* Private variables (only shared with children) */
+    --orientation: 20deg;                                               /* Angle of the parallelogram's side (variable because used in '.logo-text' too) */
+    
+    /* Element styles */
+    background: linear-gradient(to left, var(--light), var(--dark));    /* The color of the parallelogram */
+    transform: skew(calc(var(--orientation) * (-1)));                   /* Slightly angle the <div> to look like a parallelogram */
+    border-radius: var(--default-border-radius);                        /* Round the corners of the parallelogram */
+    padding: 20px;                                                      /* Distance between text and border of the parallelogram */
+    margin-left: 40px;                                                  /* Leave some space on the left because the "skew" makes the parallelogram overlap other elements */
+    margin-right: 40px;                                                 /* Leave some space on the right because the "skew" makes the parallelogram overlap other elements */
+    box-shadow: 0 0 10px 0px var(--lightest);                           /* A box shadow glow effect */
+    transition: var(--default-transition-time);                         /* Give hover and active effects a transition time */
+    cursor: pointer;                                                    /* Change the cursor to a "selecting" cursor */
+}
+    /* On hover, enlarge the logo */
+    .logo-container:hover {
+        scale: 1.05;                            /* Set the scale to be slightly larger */
+        text-shadow: 0 0 4px var(--lightest);   /* Give it a glow effect */
+    }
+
+    /* On active (click down), revert the scaling */
+    .logo-container:active {
+        scale: 1;   /* Set the scale back to the original */
+    }
+
+/* The logo's text ("Z-Volta") */
+.logo-text {
+    font-family: "Syncopate";               /* Set the "Syncopate" font family to the text */
+    font-size: 48px;                        /* Set the font size */
+    font-weight: bold;                      /* Bold font weight */
+    white-space: nowrap;                    /* Don't let the text break if the viewport is too small */
+    color: var(--lightest);                 /* Set the color of the text */
+    transform: skew(var(--orientation));    /* Skew the text back to correct orientation (or else it will be oriented as the container) */
+}
+
+/* Create an underline beneath the logo text with ::after pseudo element */
+.logo-text::after {
+    content: "";                                /* Make sure the ::after pseudo element exists by giving it some content ("") */
+    position: absolute;                         /* Position it absolutely relative to the text */
+    bottom: 0;                                  /* Set it to be on the bottom */
+    left: 0;                                    /* Set it to be on the left */
+    height: 3px;                                /* The height (thickness) of the line */
+    width: 100%;                                /* The width should span the whole text */
+    background-color: var(--lightest);          /* The color of the line stroke */
+    border-radius: 999px;                       /* The radius of the endpoints of the line (maximum curve) */
+    transform-origin: left;                     /* Set the transform to begin from the left */
+    transform: scaleX(0);                       /* Scale on the X axis the line to "0" at first */
+    transition: var(--default-transition-time); /* Give the hover effect a transition time */
+}
+    /* On hover, animate the underline */
+    .logo-container:hover .logo-text::after {
+        transform: scaleX(1);                   /* Set the scale on the X axis of the line to "1" to make it get back the "100%" width and actually show */
+        box-shadow: 0 0 4px 0 var(--lightest);  /* Give it a glow effect */
+    }
+
+
+/*! Separator !*/
+/* Vertical line separator between logo and login-box */
+#separator {
+    height: 80vh;                       /* The line's height */
+    min-width: 2px;                     /* The line's width */
+    background-color: var(--lightest);  /* The line's color */
+    border-radius: 999px;               /* The border radius (999px for maximum curve) */
+}
+
+
+/*!Login steps - Root !*/
+/* Login container (the box that contains the login form) */
+#login-steps-container {
+    height: 500px;                                      /* The height of the container */
+    width: 400px;                                       /* The width of the container */
+    border-radius: var(--default-border-radius);        /* The border radius of the container */
+    background-color: var(--lightest);                  /* The background color of the container */
+    box-shadow: 3px 5px 10px var(--dark-transparency);  /* A dark transparent box shadow */
+    position: relative;                                 /* Have the login steps be aligned to the container relatively */
+}
+
+/* Each "step" (the "role", "credentials" and the "CAPTCHA") */
+.login-step {
+    position: absolute;                                             /* Position them absolutely relative to the container */
+    height: 100%;                                                   /* Occupy full height */
+    width: 100%;                                                    /* Occupy full width */
+    padding: 20px;                                                  /* Some padding from the container */
+    display: flex;                                                  /* Align items */
+    flex-direction: column;                                         /* Align items vertically */
+    gap: 10px;                                                      /* Put some space between the elements */
+    opacity: 0;                                                     /* Set default opacity to "0" (will chance with class .active) */
+    scale: 0;                                                       /* Set default scale to "0" (will chance with class .active) */
+    transition: opacity var(--default-transition-time), scale 0s;   /* Have a default transition for opacity and "0s" for scaling */
+}
+    /* Once it has the class .active, it shows */
+    .login-step.active {
+        opacity: 1; /* Set opacity to "1" */
+        scale: 1;   /* Scale back to normal ("1") */
+    }
+
+/* Titles of the "steps" */
+.login-step h2 {
+    color: var(--dark);     /* Text color */
+    font-weight: bold;      /* Font weight */
+    text-align: center;     /* Align text in the center */
+    margin-bottom: 10px;    /* Some distance from the elements at the bottom */
+}
+
+/* Contains the buttons of each step */
+.login-step .navigation-buttons {
+    height: 100%;                   /* Occupy the whole container space vertically */
+    width: 100%;                    /* Occupy the whole container space horizontally */
+    display: flex;                  /* Align items */
+    align-items: flex-end;          /* Align items to the bottom */
+    justify-content: space-evenly;  /* Space them around the length of the container evenly */
+}
+
+
+/*! Login steps - Role selection !*/
+/* The "tabs" container of the single tabs (the selection of roles) */
+#login-form #role-tabs {
+    display: flex;              /* Align items */
+    flex-direction: column;     /* Align items vertically */
+    gap: 10px;                  /* Space the items by "10px" */
+}
+
+/* Each individual role "tab" */
+#role-tabs .role-tab {
+    border: 2px solid var(--dark-transparency);     /* Border with a darker color (transparency) */
+    border-radius: var(--default-border-radius);    /* Smooth corners */
+    padding: 18px;                                  /* Distance from the border */
+    display: flex;                                  /* Align items (the role title and the description) */
+    flex-direction: column;                         /* Align items vertically */
+    justify-content: center;                        /* Vertically align items in the center */
+    gap: 8px;                                       /* Give some distance between the tabs */
+    transition: var(--default-transition-time);     /* Default transition time */
+    cursor: pointer;                                /* Change the cursor to a "selecting" cursor */
+}
+    /* The selected tab (class .selected) */
+    #role-tabs .role-tab.selected {
+        color: var(--lightest);             /* Text color */
+        background-color: var(--regular);   /* Background color */
+    }
+
+/* The radio input element */
+#role-tabs .role-tab input[type="radio"] {
+    display: none;  /* Hide the radio button so the circle doesn't show */
+}
+
+/* The title of the role */
+#role-tabs .role-tab .role-title {
+    font-weight: bold;  /* Bold font */
+    font-size: 18px;    /* Bigger font size */
+}
+
+/* The description of each tab */
+#role-tabs .role-tab .role-description {
+    scale: 0;                                                       /* Set default scale to "0" (changes on hover of the tab) */
+    opacity: 0;                                                     /* Set default opacity to "0" (changes on hover of the tab) */
+    transition: opacity var(--default-transition-time), scale 0s;   /* Have a default transition for opacity and "0s" for scaling */
+}
+    /* When hovering the tab, show the role description */
+    #role-tabs .role-tab:hover .role-description {
+        opacity: 1;                                                     /* Set opacity to "1" */
+        scale: 1;                                                       /* Scale back to normal ("1") */
+        transition: opacity var(--default-transition-time), scale 0s;   /* Have a default transition for opacity and "0s" for scaling */
+    }
+
+    /* When the tab is selected, show the role description (permanently until de-selected, not just when hovering) */
+    #role-tabs .role-tab.selected .role-description {
+        opacity: 1; /* Set opacity to "1" */
+        scale: 1;   /* Scale back to normal ("1") */
+    }
+
+
+
+/*! Login steps - Password related !*/
+/* Password container */
+#password-container {
+    display: flex;          /* Align items */
+    align-items: center;    /* Align items vertically */
+}
+
+/* The password input */
+#password-container input {
+    width: 100%;            /* The size of the input element based on the container */
+    padding-right: 30px;    /* Padding on the right to make the text of a very long password not be hidden by the eye icon */
+}
+
+/* The password's eye icon */
+#password-container span {
+    position: absolute;                             /* Position the icon absolutely */
+    right: 30px;                                    /* Move the icon to the right and give a little distance to make it appear in the input */
+    color: var(--dark-transparency);                /* Color of the icon */
+    cursor: pointer;                                /* Change cursor on hover */
+    transition: var(--default-transition-time);     /* Default transition time (element also has .default-interaction-behavior) */
+}
+    /* Enlarge on hover */
+    #password-container span:hover {
+        scale: 1.05;    /* Scale up */
+    }
+
+    /* Shrink on active */
+    #password-container span:active {
+        scale: 0.95;    /* Scale down */
+    }
+
+/* Password requirements text container */
+#password-requirements {
+    margin-top: 10px;                                   /* Leave more space at the top too */
+    padding: 10px 20px;                                 /* Less padding on the top and bottom (left padding should be the same as '#password-requirements ul') */
+    background-color: var(--light);                     /* Color of the box */
+    border-radius: var(--default-border-radius);        /* Border curvature */
+    color: var(--darkest);                              /* Color of the text */
+    font-weight: bold;                                  /* Bold text */
+    opacity: 0;                                         /* Default opacity set to "0" (will change on .active) */
+    transition: opacity var(--default-transition-time); /* Default transition time */
+    cursor: default;                                    /* Keep cursor default (the "blinker" text selection one was useless) */
+}
+
+/* Password requirements text container when active */
+#password-requirements.active {
+    opacity: 1; /* Change opacity to show the requirements */
+}
+
+/* Each requirement when satisfied */
+#password-requirements .requirement.satisfied {
+    text-decoration: line-through;  /* Cross out satisfied requirements */
+}
+
+/* The list of requirements */
+#password-requirements ul {
+    padding-left: 20px; /* Move to align with the text above (also, this should be the same as the padding in #password-requirements) */
+}
+
+
+/*! Text CAPTCHA !*/
+/* Progress bar container */
+#progress-bar-wrapper {
+    width: 100%;
+    height: 15px;
+}
+
+/* Progress bar element */
+#progress-bar {
+    border-radius: 999px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(80, 180, 45);
+    /* transition: width 1s linear; */
+}
+
+/* CAPTCHA container */
+#captcha-container {
+    display: flex;          /* Align items */
+    align-items: center;    /* Align items vertically */
+}
+
+/* The captcha input */
+#captcha-container input {
+    width: 100%;            /* The size of the input element based on the container */
+    padding-right: 30px;    /* Padding on the right to make the text of a very long CAPTCHA not be hidden by the refresh icon */
+}
+
+/* The CAPTCHA's refresh icon */
+#captcha-container span {
+    position: absolute;                             /* Position the icon absolutely */
+    right: 30px;                                    /* Move the icon to the right and give a little distance to make it appear in the input */
+    color: var(--dark-transparency);                /* Color of the icon */
+    cursor: pointer;                                /* Change cursor on hover */
+    transition: var(--default-transition-time);     /* Default transition time (element also has .default-interaction-behavior) */
+}
+    /* Enlarge on hover */
+    #captcha-container span:hover {
+        scale: 1.05;    /* Scale up */
+    }
+
+    /* Shrink on active */
+    #captcha-container span:active {
+        scale: 0.95;    /* Scale down */
+    }
+
+
+/*! Notification chips !*/
+
+#chips-container {
+    position: fixed;
+    top: calc(5vh - 24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--darkest);
+    gap: 10px;
+}
+
+.chip {
+    display: flex;
+    max-width: 90vw;
+    align-items: center;
+    background-color: var(--light);
+    padding: 8px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 3px 5px 0px var(--dark-transparency);
+    cursor: pointer;
+
+    transform: translateY(-100px);
+    opacity: 0;
+    overflow: hidden;
+    transition:
+        opacity var(--default-transition-time) ease,
+        transform calc(var(--default-transition-time) * 2) ease,
+        filter calc(var(--default-transition-time) * 2) ease,
+        scale var(--default-transition-time) ease;
+}
+
+    .chip.show {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+.chip div {
+    background-color: var(--lightest);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 22px;
+}
+
+.chip span {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 0px;
+    margin-left: 0px;
+    white-space: nowrap;
+    transition:
+        opacity calc(var(--default-transition-time) * 2) ease,
+        max-width calc(var(--default-transition-time) * 2) ease,
+        margin calc(var(--default-transition-time) * 2) ease;
+    transition-delay: calc(var(--default-transition-time) * 2);
+}
+
+    .chip.show span {
+        opacity: 1;
+        max-width: 90vw;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+/*! Responsiveness !*/
+/* Change stylings when the screen is less or equal to 600px */
+@media (max-width: 600px) {
+    body {
+        flex-direction: column; /* Change item alignment to be vertical */
+    }
+
+    #separator {
+        height: 2px;        /* The line's height */
+        min-width: 80vw;    /* The line's width */
+    }
+}
